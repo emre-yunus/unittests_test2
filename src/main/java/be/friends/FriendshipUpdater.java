@@ -35,12 +35,12 @@ public class FriendshipUpdater {
             }
         }
 
-        if (friend.isLucky && !friend.didSomeInteractionToday) {
-            friend.friendshipLevel -= 4;
-        }
-
-        if (friend.isLucky && friend.didSomeInteractionToday) {
-            friend.isLucky = false;
+        if(friend.isLucky) {
+            if(friend.didSomeInteractionToday) {
+                friend.isLucky = false;
+            } else {
+                friend.friendshipLevel -= 4;
+            }
         }
     }
 }
