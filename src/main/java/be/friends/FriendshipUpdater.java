@@ -16,16 +16,17 @@ public class FriendshipUpdater {
 
     private void friendUpdate(Friend friend) {
         if (friend.didSomeInteractionToday) {
+            friend.friendshipLevel++;
+
             if (friend.nrOfStars == 0) {
-                friend.nrOfStars++;
-            } else if(friend.friendshipLevel == 9 && friend.nrOfStars == 1){
-                friend.friendshipLevel = 0;
-                friend.nrOfStars = 2;
-            } else if(friend.nrOfStars == 2 && friend.friendshipLevel == 29) {
                 friend.friendshipLevel = 0;
                 friend.nrOfStars++;
-            } else {
-                friend.friendshipLevel++;
+            } else if(friend.friendshipLevel == 10 && friend.nrOfStars == 1){
+                friend.friendshipLevel = 0;
+                friend.nrOfStars++;
+            } else if(friend.nrOfStars == 2 && friend.friendshipLevel == 30) {
+                friend.friendshipLevel = 0;
+                friend.nrOfStars++;
             }
 
             if(friend.isLucky) {
