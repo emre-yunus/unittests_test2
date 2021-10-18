@@ -26,7 +26,7 @@ public class FriendshipUpdater {
                 friend.friendshipLevel++;
             }
 
-            if (friend.nrOfStars != 3 && friend.friendshipLevel == 30) {
+            if (friend.nrOfStars == 2 && friend.friendshipLevel == 30) {
                 friend.friendshipLevel = 0;
                 friend.nrOfStars++;
             }
