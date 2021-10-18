@@ -17,13 +17,8 @@ public class FriendshipUpdater {
     private void friendUpdate(Friend friend) {
         if (friend.didSomeInteractionToday) {
             friend.friendshipLevel++;
-
             updateIncreaseStar(friend);
-
-            if(friend.isLucky) {
-                friend.isLucky = false;
-                friend.friendshipLevel +=4;
-            }
+            updateIsLucky(friend);
         }
     }
 
@@ -34,6 +29,13 @@ public class FriendshipUpdater {
         {
             friend.friendshipLevel = 0;
             friend.nrOfStars++;
+        }
+    }
+
+    private void updateIsLucky(Friend friend) {
+        if(friend.isLucky) {
+            friend.isLucky = false;
+            friend.friendshipLevel +=4;
         }
     }
 }
