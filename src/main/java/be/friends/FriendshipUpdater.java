@@ -28,13 +28,10 @@ public class FriendshipUpdater {
     }
 
     private void updateIncreaseStar(Friend friend) {
-        if (friend.nrOfStars == 0) {
-            friend.friendshipLevel = 0;
-            friend.nrOfStars++;
-        } else if(friend.friendshipLevel == 10 && friend.nrOfStars == 1){
-            friend.friendshipLevel = 0;
-            friend.nrOfStars++;
-        } else if(friend.nrOfStars == 2 && friend.friendshipLevel == 30) {
+        if(friend.nrOfStars == 0 ||
+            friend.friendshipLevel == 10 && friend.nrOfStars == 1 ||
+            friend.nrOfStars == 2 && friend.friendshipLevel == 30)
+        {
             friend.friendshipLevel = 0;
             friend.nrOfStars++;
         }
