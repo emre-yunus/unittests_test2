@@ -18,7 +18,7 @@ public class FriendshipUpdater {
         boolean wasLucky = !friend.isLucky;
 
         if (friend.isLucky && friend.didSomeInteractionToday) {
-            friend.isLucky = !friend.isLucky;
+            friend.isLucky = false;
         }
 
         if (!wasLucky)
@@ -34,15 +34,6 @@ public class FriendshipUpdater {
                     friend.nrOfStars = 2;
                 }
                 friend.friendshipLevel++;
-                /*
-                if (friend.friendshipLevel == 9) {
-                    if (friend.nrOfStars == 1) {
-                        friend.friendshipLevel = -1;
-                        friend.nrOfStars = 2;
-                    }
-                }
-                friend.friendshipLevel++;
-                 */
             }
 
             if (friend.nrOfStars != 3 && friend.friendshipLevel == 30) {
