@@ -18,11 +18,10 @@ public class FriendshipUpdater {
         if (friend.didSomeInteractionToday) {
             if (friend.nrOfStars == 0) {
                 friend.nrOfStars++;
+            } else if(friend.friendshipLevel == 9 && friend.nrOfStars == 1){
+                friend.friendshipLevel = 0;
+                friend.nrOfStars = 2;
             } else {
-                if(friend.friendshipLevel == 9 && friend.nrOfStars == 1) {
-                    friend.friendshipLevel = -1;
-                    friend.nrOfStars = 2;
-                }
                 friend.friendshipLevel++;
             }
 
