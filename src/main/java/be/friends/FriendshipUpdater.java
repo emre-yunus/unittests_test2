@@ -15,13 +15,7 @@ public class FriendshipUpdater {
     }
 
     private void friendUpdate(Friend friend) {
-        boolean wasLucky = !friend.isLucky;
-
-        if (friend.isLucky && friend.didSomeInteractionToday) {
-            friend.isLucky = false;
-        }
-
-        if (!wasLucky)
+        if (friend.isLucky)
             friend.friendshipLevel += 4;
 
         if (friend.didSomeInteractionToday) {
@@ -42,16 +36,17 @@ public class FriendshipUpdater {
             }
         }
 
-        updateFriendIsLuckyAndInteracted(friend, wasLucky);
+        updateFriendIsLuckyAndInteracted(friend);
+
+        if (friend.isLucky && friend.didSomeInteractionToday) {
+            friend.isLucky = false;
+        }
     }
 
-
-
-    private void updateFriendIsLuckyAndInteracted(Friend friend, boolean wasLucky) {
-        if (!wasLucky && !friend.didSomeInteractionToday) {
+    private void updateFriendIsLuckyAndInteracted(Friend friend) {
+        if (friend.isLucky && !friend.didSomeInteractionToday) {
             friend.isLucky = true;
             friend.friendshipLevel -= 4;
         }
     }
-
 }
