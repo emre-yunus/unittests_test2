@@ -30,10 +30,8 @@ public class FriendshipUpdater {
                 friend.friendshipLevel = 0;
                 friend.nrOfStars = friend.nrOfStars + 1;
             }
-        }
 
-        if(friend.isLucky) {
-            if(friend.didSomeInteractionToday) {
+            if(friend.isLucky) {
                 friend.isLucky = false;
                 friend.friendshipLevel +=4;
             }
