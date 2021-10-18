@@ -21,13 +21,11 @@ public class FriendshipUpdater {
             } else if(friend.friendshipLevel == 9 && friend.nrOfStars == 1){
                 friend.friendshipLevel = 0;
                 friend.nrOfStars = 2;
-            } else {
-                friend.friendshipLevel++;
-            }
-
-            if (friend.nrOfStars == 2 && friend.friendshipLevel == 30) {
+            } else if(friend.nrOfStars == 2 && friend.friendshipLevel == 29) {
                 friend.friendshipLevel = 0;
                 friend.nrOfStars++;
+            } else {
+                friend.friendshipLevel++;
             }
 
             if(friend.isLucky) {
