@@ -45,7 +45,6 @@ public class FriendshipUpdater {
 
     private void updateFriendIsLuckyAndInteracted(Friend friend) {
         if (friend.isLucky && !friend.didSomeInteractionToday) {
-            friend.isLucky = true;
             friend.friendshipLevel -= 4;
         }
     }
