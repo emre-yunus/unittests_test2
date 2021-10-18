@@ -16,9 +16,9 @@ public class FriendshipUpdater {
 
     private void friendUpdate(Friend friend) {
         if (friend.didSomeInteractionToday) {
-            if (friend.nrOfStars == 0)
+            if (friend.nrOfStars == 0) {
                 friend.nrOfStars++;
-            else {
+            } else {
                 if(friend.friendshipLevel == 9 && friend.nrOfStars == 1) {
                     friend.friendshipLevel = -1;
                     friend.nrOfStars = 2;
