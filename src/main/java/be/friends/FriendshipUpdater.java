@@ -28,7 +28,7 @@ public class FriendshipUpdater {
 
             if (friend.nrOfStars != 3 && friend.friendshipLevel == 30) {
                 friend.friendshipLevel = 0;
-                friend.nrOfStars = friend.nrOfStars + 1;
+                friend.nrOfStars++;
             }
 
             if(friend.isLucky) {
